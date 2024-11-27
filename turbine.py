@@ -55,7 +55,7 @@ def detect_anomalies(data, model, threshold=0.02):
     return anomalies, loss
 
 # Visualize Results
-def visualize_anomalies(data, anomalies, loss):
+def visualize_anomalies(data, anomalies, loss, threshold):
     plt.figure(figsize=(10, 6))
     plt.plot(loss, label='Reconstruction Loss')
     plt.axhline(y=threshold, color='r', linestyle='--', label='Threshold')
@@ -93,7 +93,7 @@ def main():
             st.write(data)
 
             # Visualize Anomalies
-            visualize_anomalies(data, anomalies, loss)
+            visualize_anomalies(data, anomalies, loss, threshold)
 
 if __name__ == "__main__":
     main()
